@@ -14,8 +14,9 @@
 
 # Common path
 COMMON_PATH := device/sony/common
-
-ifneq ($(filter 4.19, $(SOMC_KERNEL_VERSION)),)
+ifneq ($(filter 4.14, $(SOMC_KERNEL_VERSION)),)
+display_platform := sm8150
+else ifneq ($(filter 4.19, $(SOMC_KERNEL_VERSION)),)
 display_platform := sm8250
 else ifneq ($(filter 5.4, $(SOMC_KERNEL_VERSION)),)
 display_platform := sm8350
